@@ -27,12 +27,12 @@ namespace CarsProgram.Logica
             get => _año;
             set => _año = value;
         }
+        public bool RunAction {get; set;}
 
         public abstract string getInformation();
         public override string ToString()
         {
             return $"Marca: {Marca}\nModelo: {Modelo}\nAño: {Año}";
         }
-        public abstract string runAction();
     }
 }

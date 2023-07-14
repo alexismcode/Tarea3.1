@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CarsProgram.Logica
 {
-    public class Automovil : Vehiculo
+    public class Camioneta : Vehiculo
     {
-        private int _puertas;
+        private double _capacidadCarga;
 
-        public int Puertas
+        public double CapacidadCarga
         {
-            get => _puertas;
-            set => _puertas = value;
+            get => _capacidadCarga;
+            set => _capacidadCarga = value;
         }
         public override string getInformation()
         {
@@ -23,8 +23,8 @@ namespace CarsProgram.Logica
         public override string ToString()
         {
             return $"{base.ToString()}\n\t" +
-                   $"{getInformation}\nPuertas: {Puertas}\n" +
-                   $"Conducir vehiculo";
+                   $"{getInformation}\nCapacidad de carga: {CapacidadCarga}\n" +
+                   $"Cargar camioneta";
         }
     }
 }
