@@ -6,15 +6,14 @@ try
         Marca = "Ford",
         Modelo = "Mustang",
         Año = 2022,
-        RunAction = true,
         Puertas = 2
     };
+
     var camioneta1 = new Camioneta()
     {
-        Marca = "Ford",
-        Modelo = "Mustang",
-        Año = 2022,
-        RunAction = true,
+        Marca = "Chevrolet",
+        Modelo = "Silverado",
+        Año = 2020,
         CapacidadCarga = 1500
     };
     Console.WriteLine(automovil1);
@@ -22,5 +21,5 @@ try
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Existio un Eror {ex.Message}");
+    Console.WriteLine($"ERROR: [{ex.Message}]");
 }

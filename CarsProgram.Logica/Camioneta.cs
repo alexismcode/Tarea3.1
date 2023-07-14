@@ -13,18 +13,33 @@ namespace CarsProgram.Logica
         public double CapacidadCarga
         {
             get => _capacidadCarga;
-            set => _capacidadCarga = value;
+            set => _capacidadCarga = ValidateCapacidadCarga(value);
         }
         public override string getInformation()
         {
-            string vehiculoInfo = getInformation();
+            string vehiculoInfo = base.ToString();
             return vehiculoInfo;
         }
+        public override string RunAction()
+        {
+            string action = "============> Cargar camioneta <=============\n\n";
+            return action;
+        }  
         public override string ToString()
         {
-            return $"{base.ToString()}\n\t" +
-                   $"{getInformation}\nCapacidad de carga: {CapacidadCarga}\n" +
-                   $"Cargar camioneta";
+            return $"=============================================\n" +
+                   $"{getInformation()}\n> Capacidad de carga:....{CapacidadCarga,17} kg\n" +
+                   $"{RunAction()}";
+        }
+
+        private double ValidateCapacidadCarga(double value)
+        {
+            ;
+            if (value < 1 || value > 3500)
+            {
+                throw new ArgumentException("El valor de carga es invalido");
+            }
+            return value;
         }
     }
 }
